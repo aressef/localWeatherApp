@@ -26,8 +26,8 @@ var functions = {
       // Converting Weather from Kelvin to Fahrenheit and Celsius
       var fahrenheitConverter = Math.round((getTemp * (9/5) - 459.67) * 100) / 100;
       var celsiusConverter = Math.round((getTemp - 273.15) * 100) / 100;
-      fahrenheit = fahrenheitConverter + " fahrenheit";
-      celsius = celsiusConverter + " celsius";
+      fahrenheit = fahrenheitConverter;
+      celsius = celsiusConverter;
 
       city.innerHTML = getCity;
       temp.innerHTML = fahrenheit;
@@ -46,9 +46,9 @@ var functions = {
   toggleTemp: function() {
     var currentTempType = document.getElementById('temp');
     if (currentTempType.innerHTML == fahrenheit) {
-      currentTempType.innerHTML = celsius;
+      currentTempType.innerHTML = celsius + " &#8451;";
     } else {
-      currentTempType.innerHTML = fahrenheit;
+      currentTempType.innerHTML = fahrenheit + " &#8457;";
     }
   },
   getWeatherIcon: function() {

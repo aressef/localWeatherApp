@@ -1,5 +1,30 @@
 /* CSS file for Local Weather App  */
-body {}
+body {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: -ms-center;
+  justify-content: -webkit-center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tempToggle {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: -ms-row;
+  flex-direction: -webkit-row;
+  flex-direction: row;
+  align-items: -ms-center;
+  align-items: -webkit-center;
+  align-items: center;
+}
 
 input[type='checkbox'] {
   display: none;
