@@ -1,0 +1,48 @@
+/* CSS file for Local Weather App  */
+body {}
+
+input[type='checkbox'] {
+  display: none;
+}
+input[type='checkbox']:checked ~ .toggle {
+  background: #009688;
+  left: 26px;
+  transition: .5s;
+}
+input[type='checkbox']:checked ~ .switch {
+  background: #6DBEB7;
+  transition: .5s;
+}
+
+.switch {
+  display: block;
+  width: 50px;
+  height: 20px;
+  background: #939393;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  transition: .5s;
+}
+
+.toggle {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: .5s;
+}
+
+.card {
+  display: inline-block;
+  margin: 9px;
+  margin: 5px;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  position: relative;
+}

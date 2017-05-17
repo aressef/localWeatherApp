@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Local Weather App</title>
+  <title>Local Weather App</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
 
-  <p id="city"></p>
-  <p id="weather"></p>
-  <img src="" alt="" id="weatherIcon" width="150px" height="150px"/>
-  <p id="temp"></p><button class='toggleTempButton' onclick="functions.toggleTemp()">toggle temp</button>
+  <div>
 
+    <p id="city"></p>
+    <p id="weather"></p>
+    <img src="" alt="" id="weatherIcon" width="150px" height="150px"/>
+    <p id="temp"></p>
 
+    <!-- Toggle Switch -->
+    <div class="tempToggle">
+      <p>&#8457;</p>
+      <div class="card">
+        <label for="switch1">
+        <input type="checkbox" id="switch1" onclick="functions.toggleTemp()"/><span class="switch"></span><span class="toggle"></span>
+        </label>
+      </div>
+      <p>&#8451;</p>
+    </div>
+
+  </div>
 
   <!-- JavaScript links -->
   <script src='main.js'></script>

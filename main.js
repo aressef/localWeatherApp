@@ -56,21 +56,23 @@ var functions = {
     var currentWeather = weather.innerHTML;
     var image = '';
 
-    console.log(weather);
     console.log(currentWeather);
 
     switch(currentWeather) {
       case "sunny":
       case "clear sky":
+      case "clear":
         image = 'img/weather-clear.png';
         break;
       case "few clouds":
+      case "scattered clouds":
         image = 'img/weather-few-clouds.png';
         break;
       case "rainy":
         image = 'img/weather-showers-night.png';
         break;
       case "cloudy":
+      case "overcast clouds":
         image = 'img/weather-clouds.png';
         break;
       case "light rain":
@@ -81,7 +83,7 @@ var functions = {
         image = 'img/weather-storm-night.png';
         break;
       case "broken clouds":
-        image = 'img/weather-few-clouds-night.png';
+        image = 'img/weather-haze.png';
         break;
       default:
         image = 'img/weather-none-available.png';
