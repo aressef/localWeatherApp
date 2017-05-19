@@ -30,7 +30,7 @@ var functions = {
       celsius = celsiusConverter;
 
       city.innerHTML = getCity;
-      temp.innerHTML = fahrenheit;
+      temp.innerHTML = fahrenheit + " &#8457;";
       weather.innerHTML = getWeather;
 
       console.log(data);
@@ -45,11 +45,16 @@ var functions = {
   },
   toggleTemp: function() {
     var currentTempType = document.getElementById('temp');
-    if (currentTempType.innerHTML == fahrenheit) {
+    var fahrenheitSymbol = document.createElement("TEXTAREA");
+    fahrenheitSymbol.innerHTML = " &#8457;";
+
+    if (currentTempType.innerHTML == fahrenheit + fahrenheitSymbol.value) {
       currentTempType.innerHTML = celsius + " &#8451;";
     } else {
-      currentTempType.innerHTML = fahrenheit + " &#8457;";
+      currentTempType.innerHTML = fahrenheit + fahrenheitSymbol.value;
     }
+
+    console.log(currentTempType.innerHTML);
   },
   getWeatherIcon: function() {
     var weatherIcon = document.getElementById('weatherIcon');
