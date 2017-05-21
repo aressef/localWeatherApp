@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400');
+
+
 /* CSS file for Local Weather App  */
 html, body {
   height: 85%;
@@ -12,6 +15,16 @@ html, body {
   -webkit-justify-content: center;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  background: #0097A7;
+  color: #212121;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  color: #FFF;
+  font-weight: 100;
 }
 
 .weatherBox {
@@ -19,12 +32,34 @@ html, body {
   align-items: center;
   flex-direction: column;
 
-  background: #fff;
+  background: #B2EBF2;
   border-radius: 2px;
   margin: 1rem;
   position: relative;
   width: 350px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#city {
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+#weather, #temp {
+  font-size: 22px;
+  margin-bottom: 3px
+}
+
+#weatherIcon {
+  margin-bottom: 5px;
+}
+
+#temp {
+  margin-top: 0px;
+}
+
+.tempTypes {
+  font-weight:300;
 }
 
 .tempToggle {
@@ -52,19 +87,19 @@ input[type='checkbox'] {
   display: none;
 }
 input[type='checkbox']:checked ~ .toggle {
-  background: #009688;
+  background: #0097A7;
   left: 26px;
   transition: .5s;
 }
 input[type='checkbox']:checked ~ .switch {
-  background: #6DBEB7;
+  background: #00BCD4;
   transition: .5s;
 }
 
 .switch {
   display: block;
-  width: 50px;
-  height: 20px;
+  width: 45px;
+  height: 18px;
   background: #939393;
   border-radius: 10px;
   position: absolute;
@@ -73,8 +108,8 @@ input[type='checkbox']:checked ~ .switch {
 }
 
 .toggle {
-  height: 28px;
-  width: 28px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   background: white;
   position: absolute;
@@ -92,4 +127,8 @@ input[type='checkbox']:checked ~ .switch {
   height: 20px;
   text-align: center;
   position: relative;
+}
+
+.credit {
+  font-size: 12px;
 }
