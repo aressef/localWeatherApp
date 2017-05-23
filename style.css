@@ -136,14 +136,10 @@ input[type='checkbox']:checked ~ .switch {
 }
 
 
-/* Media Queries */
+ /*Media Queries */
 
-/*@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 374px) {
   h1 {
-    font-size: ;
-    color: red;
+    margin-top: 80px;
   }
-
-
-
-}*/
+}
