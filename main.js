@@ -21,7 +21,10 @@ var functions = {
       var lon = data.coord.lon;
       var getTemp = data.main.temp;
       var getCity = data.name;
+      var sunrise = data.sys.sunrise;
+      var sunset = data.sys.sunset;
       getWeather = data.weather[0].description;
+      var getWeatherUpperCase = functions.toTitleCase(getWeather);
 
       // Converting Weather from Kelvin to Fahrenheit and Celsius
       var fahrenheitConverter = Math.round((getTemp * (9/5) - 459.67) * 100) / 100;
@@ -31,14 +34,35 @@ var functions = {
 
       city.innerHTML = getCity;
       temp.innerHTML = fahrenheit + " &#8457;";
-      weather.innerHTML = getWeather;
+      weather.innerHTML = getWeatherUpperCase;
 
       console.log(data);
-      console.log(getTemp);
-      console.log(getCity);
-      console.log(getWeather);
-      console.log("Lat: " + lat);
-      console.log("Lon: " + lon);
+
+
+      console.log(getWeatherUpperCase);
+
+      // var offset = new Date().getTimezoneOffset();
+      // console.log(offset);
+      // var sec = sunset;
+      // console.log (sunset, sec);
+      // var date = new Date(sec * 1000);
+      // var timestr = date.toLocaleTimeString();
+      // var cleanTime = timestr.replace(/:\d+ /, ' ');
+      // console.log(cleanTime);
+      // console.log(date, timestr);
+
+      // var cap = {};
+      // var split = getWeather.split(' ');
+      //
+      // for (var i = 0; i < split.length; i++) {
+      //   for (var j = 0; j < split[i].length; j++) {
+      //     cap[i] = split[i][0].toUpperCase();
+      //   }
+      //   split[i][0] = cap[i][0];
+      //   console.log(split);
+      // }
+      //
+      // console.log(cap);
 
       functions.getWeatherIcon();
     });
@@ -61,40 +85,52 @@ var functions = {
     var currentWeather = weather.innerHTML;
     var image = '';
 
-    console.log(currentWeather);
-
     switch(currentWeather) {
-      case "sunny":
-      case "clear sky":
-      case "clear":
+      case "Sunny":
+      case "Clear Sky":
+      case "Clear":
         image = 'img/weather-clear.png';
         break;
-      case "few clouds":
-      case "scattered clouds":
-        image = 'img/weather-few-clouds.png';
+      case "Broken Clouds":
+        image = 'img/weather-haze.png';
         break;
-      case "rainy":
-        image = 'img/weather-showers-night.png';
-        break;
-      case "cloudy":
-      case "overcast clouds":
+      case "Cloudy":
+      case "Overcast Clouds":
         image = 'img/weather-clouds.png';
         break;
-      case "light rain":
+      case "Few Clouds":
+      case "Scattered Clouds":
+        image = 'img/weather-few-clouds.png';
+        break;
+      case "Rainy":
+        image = 'img/weather-showers-night.png';
+        break;
+      case "Light Rain":
         image = 'img/weather-rain-night.png';
         break;
-      case "stormy":
-      case "thunderstorm":
-        image = 'img/weather-storm-night.png';
+      case "Snow":
+        image = 'img/weather-snow.png';
         break;
-      case "broken clouds":
-        image = 'img/weather-haze.png';
+      case "Stormy":
+      case "Thunderstroms":
+      //case "thunderstorm" //night:
+      //  image = 'img/weather-storm-night.png';
+        image = 'img/weather-storm.png'
         break;
       default:
         image = 'img/weather-none-available.png';
         console.log("I can't seem to find the weather.");
     }
-  weatherIcon.src = image;
+    weatherIcon.src = image;
+  },
+  getTime: function() {
+    var time = new Date();
+    var hour = time.getHours();
+    var minutes = time.getMinutes();
+    console.log(hour + ' ' + minutes);
+  },
+  toTitleCase: function(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   }
 };
 
@@ -120,42 +156,3 @@ function ajaxRequest (path, callback) {
 }
 
 functions.getLocation();
-
-// function getWeatherIcon(currentWeather) {
-//   var weatherIcon = document.getElementById('weatherIcon');
-//
-//   switch(currentWeather) {
-//     case "sunny":
-//       weatherIcon.src = 'img/weather-clear.png';
-//       break;
-//     case "rainy":
-//       weatherIcon.src = 'img/weather-showers-night.png';
-//       break;
-//     case "cloudy":
-//       weatherIcon.src = 'img/weather-clouds.png';
-//       break;
-//     case "light rain":
-//       weatherIcon.src = 'img/weather-rain-night.png';
-//       break;
-//     case "stormy":
-//     case "thunderstorm":
-//       weatherIcon.src = 'img/weather-storm-night.png';
-//       break;
-//     case "broken clouds":
-//       weatherIcon.src = 'img/weather-few-clouds-night.png';
-//       break;
-//     default:
-//       console.log("I can't seem to find the weather.");
-//   }
-// }
-
-
-
-
-// I can see the weather in my current location.
-
-
-// I can see a different icon or background image depending on the weather.
-
-
-// I can push a button to toggle between Fahrenheit and Celsius.
