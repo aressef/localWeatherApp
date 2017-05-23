@@ -25,6 +25,7 @@ html, body {
 h1 {
   color: #FFF;
   font-weight: 100;
+  padding-top:60px;
 }
 
 .weatherBox {
@@ -133,3 +134,16 @@ input[type='checkbox']:checked ~ .switch {
 .credit {
   font-size: 12px;
 }
+
+
+/* Media Queries */
+
+/*@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: ;
+    color: red;
+  }
+
+
+
+}*/
