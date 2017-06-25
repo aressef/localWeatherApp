@@ -112,9 +112,7 @@ var functions = {
         image = 'img/weather-snow.png';
         break;
       case "Stormy":
-      case "Thunderstroms":
-      //case "thunderstorm" //night:
-      //  image = 'img/weather-storm-night.png';
+      case "Thunderstorm":
         image = 'img/weather-storm.png'
         break;
       default:
