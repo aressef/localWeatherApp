@@ -51,6 +51,14 @@ h1 {
   margin-bottom: 3px
 }
 
+#weather {
+  margin-top: 10px;
+}
+
+#temp {
+  margin-top: 5px;
+}
+
 #weatherIcon {
   margin-bottom: 5px;
 }
